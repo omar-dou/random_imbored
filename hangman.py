@@ -2,6 +2,7 @@ import json
 import random
 import sys
 f = open("words.json")
+
 words = json.load(f)
 def split(a):
     return [char for char in a]
