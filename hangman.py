@@ -19,22 +19,29 @@ s1="""---------|\n\t 0"""
 s0="""---------|"""
 parts = [s0,s1,s2,s3,s4,s5]
 while win == False:
-    ask = input("Type in a letter.\n")
+    ask = input("Type in a letter or guess the word. ")
     bad = 0
     for index, letter in enumerate(a):
         if letter == ask:
             b[index] = ask
         if letter != ask:
             bad += 1
+    if ask == a:
+        print("you win")
+        win = True
     if bad == 5:
         body += 1
-    print(parts[body])
+    if win == False:
+        print(parts[body])
     if int(body) == 5:
         print("You Lost")
+        print("The word was", a)
         sys.exit()
     h = ''.join(b)
-    print(h)
+    if win == False:
+        print(h)
     if h == a:
+        print("you win")
         win = True
 
     
